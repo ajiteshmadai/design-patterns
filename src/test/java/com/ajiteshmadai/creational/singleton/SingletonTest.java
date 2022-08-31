@@ -14,4 +14,13 @@ public class SingletonTest  {
         Assertions.assertEquals(value, "singleton");
         Assertions.assertEquals(value, anotherValue);
     }
+
+    @Test
+    public void testThreadSafeGetInstance() {
+        //Singleton singleton = new Singleton();
+        String value = ThreadSafeSingleton.getInstance();
+        String anotherValue = ThreadSafeSingleton.getInstance();
+        Assertions.assertEquals(value, "singleton");
+        Assertions.assertEquals(value, anotherValue);
+    }
 }
